@@ -14,15 +14,18 @@ const Categories = () => {
 
   return (
     <>
-    <div className="bg-gray-100 mt-10">
-       <h1  className="p-8 justify-center flex text-3xl font-bold">CATEGORIES</h1>
-      <div className="bg-gray-100  p-8 rounded grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div className='p-20 bg-gray-100 pt-10"'>
+      <h2 className="text-4xl font-bold mb-8"> CATEGORIES</h2>
+
+      <div className="bg-gray-100 flex justify-center items-center">
+          <center className="bg-gray-100  mt-10  rounded grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
        {categories.map((cat) => (
-            <div className='bg-white rounded relative p-2' key={cat.idCategory} >
+            <div className='bg-white rounded relative p-2  shadow hover:shadow-lg transition' key={cat.idCategory} >
             <span className="absolute  right-2 bg-orange-500 text-white text-sm px-3 py-1 rounded shadow">{cat.strCategory}</span>
             <img className='p-3 ' src={cat.strCategoryThumb} alt={cat.strCategory} width="100%" />
           </div>
         ))}
+      </center>
       </div>
       </div>
     </>

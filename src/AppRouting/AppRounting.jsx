@@ -15,13 +15,17 @@ import Vegetarian from '../Pages/Vegetarian';
 import Breakfast from '../Pages/Breakfast';
 import Header from '../Components/Header';
 import Home from '../Pages/Home';
+import CategoryPage from '../Components/CategoryPage';
+import MealDetails from '../Components/MealDetails';
 
 const AppRouting = () => {
   return (
-    <Router>
+    <Router >
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} /> {/* ✅ Home page with Categories */}
+                <Route path="/meal/:mealId" element={<MealDetails />} />
+        <Route path="/category/:categoryName" element={<CategoryPage />} />
+        <Route path='/' element={<Home />} /> 
         <Route path='/' element={<Header/>}></Route>
         <Route path="/beef" element={<Beef />} />
         <Route path="/breakfast" element={<Breakfast />} />

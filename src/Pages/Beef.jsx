@@ -5,6 +5,7 @@ import Search from '../Components/Search'
 const Beef =()=>{
     return(
         <>
+        {/*  www.themealdb.com/api/json/v1/1/filter.php?c=${Category} */}
         <Search />
         <h1 className=' bg-gray-500 py-5  flex justify-center'>Beef</h1>
         <Categories />
