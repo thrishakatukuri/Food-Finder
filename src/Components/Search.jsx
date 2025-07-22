@@ -1,121 +1,3 @@
-// import React from 'react';
-// import { FaSearch } from 'react-icons/fa';
-
-// const Search = () => {
-//   return (
-//     <>
-//       <div
-//         className="w-full mt-18 min-h-[700px] bg-cover bg-center relative"
-//         style={{
-//           backgroundImage:
-//             "url('https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')",
-//         }}
-//       >
-//         {/* Absolute center content with full cover and centered items */}
-//         <div className="absolute inset-0 z-10 bg-[rgba(0,0,0,0.6)] flex flex-col justify-center items-center text-center px-4">
-//           <div className="flex justify-center items-center md:gap-3 gap-2 mb-3 flex-wrap">
-//             <input
-//               type="text"
-//               placeholder="Search recipes here ..."
-//               className="bg-gray-100 border border-gray-300 rounded-full p-3 px-5 w-[220px] md:p-5 md:w-[350px]"
-//               required
-//             />
-//             <span className="bg-orange-500 p-3 border border-white text-white rounded-full">
-//               <FaSearch className="cursor-pointer"  size={28} />
-//             </span>
-//           </div>
-
-//           <h1 className="text-2xl md:text-5xl font-bold text-white p-2 md:p-5">
-//             What are Your favorite cuisines?
-//           </h1>
-//           <p className="text-sm md:text-2xl  pt-1 md:pt-5 text-gray-200">PERSONALIZE YOUR EXPERIENCE</p>
-//         </div>
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Search;
-
-// import React, { useState } from 'react';
-// import { FaSearch } from 'react-icons/fa';
-
-// const Search = () => {
-//   const [searchInput, setSearchInput] = useState('');
-//   const [searchResults, setSearchResults] = useState([]);
-
-//   const handleSearch = async () => {
-//     if (!searchInput.trim()) return;
-
-//     const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`);
-//     const data = await res.json();
-//     setSearchResults(data.meals || []);
-//   };
-
-//   return (
-//     <>
-//       {/* 🔍 Search Banner */}
-//       <div
-//         className="w-full mt-18 min-h-[700px] bg-cover bg-center relative"
-//         style={{
-//           backgroundImage:
-//             "url('https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')",
-//         }}
-//       >
-//         <div className="absolute inset-0 z-10 bg-[rgba(0,0,0,0.6)] flex flex-col justify-center items-center text-center px-4">
-//           <div className="flex justify-center items-center md:gap-3 gap-2 mb-3 flex-wrap">
-//             <input
-//               type="text"
-//               placeholder="Search recipes here ..."
-//               value={searchInput}
-//               onChange={(e) => setSearchInput(e.target.value)}
-//               className="bg-gray-100 border border-gray-300 rounded-full p-3 px-5 w-[220px] md:p-5 md:w-[350px]"
-//             />
-//             <span
-//               onClick={handleSearch}
-//               className="bg-orange-500 p-3 border border-white text-white rounded-full hover:bg-orange-600 cursor-pointer transition"
-//             >
-//               <FaSearch size={28} />
-//             </span>
-//           </div>
-
-//           <h1 className="text-2xl md:text-5xl font-bold text-white p-2 md:p-5">
-//             What are Your favorite cuisines?
-//           </h1>
-//           <p className="text-sm md:text-2xl pt-1 md:pt-5 text-gray-200">PERSONALIZE YOUR EXPERIENCE</p>
-//         </div>
-//       </div>
-
-//       {/* ✅ Search Results Section */}
-//       <div className="p-10 bg-white">
-//         {searchResults.length > 0 ? (
-//           <>
-//             <h2 className="text-3xl font-bold mb-5">Search Results</h2>
-//             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-//               {searchResults.map((meal) => (
-//                 <div key={meal.idMeal} className="bg-white rounded shadow hover:shadow-lg transition cursor-pointer">
-//                   <img
-//                     src={meal.strMealThumb}
-//                     alt={meal.strMeal}
-//                     className="w-full h-48 object-cover rounded-t"
-//                   />
-//                   <div className="p-4 font-semibold text-center">{meal.strMeal}</div>
-//                 </div>
-//               ))}
-//             </div>
-//           </>
-//         ) : (
-//           searchInput && (
-//             <p className="text-center text-gray-500 text-lg">No results found for "{searchInput}"</p>
-//           )
-//         )}
-//       </div>
-//     </>
-//   );
-// };
-
-// export default Search;
-
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -140,8 +22,7 @@ const Search = () => {
   return (
     <>
       {/* 🔍 Banner */}
-      <div
-        className="w-full mt-18 min-h-[700px] bg-cover bg-center relative"
+      <div className="w-full mt-18 min-h-[700px] bg-cover bg-center relative"
         style={{
           backgroundImage:
             "url('https://images.pexels.com/photos/1435895/pexels-photo-1435895.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')",
@@ -172,7 +53,7 @@ const Search = () => {
       </div>
 
       {/* ✅ Search Results Section */}
-      <div className="p-10 bg-white">
+      <div className=" bg-white">
         {searchResults.length > 0 ? (
           <>
             <h2 className="text-3xl font-bold mb-5">Search Results</h2>
