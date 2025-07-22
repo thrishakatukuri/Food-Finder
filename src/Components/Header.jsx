@@ -26,7 +26,7 @@ const Header = () => {
   return (
     <>
       <header className="
-      fixed top-0 left-0 right-0 z-50 bg-orange-500 p-5 text-white  shadow-md
+      fixed top-0 left-0 right-0 z-50 bg-orange-500  text-white  shadow-md 
       position-fixed fixed bg-orange-500 p-5 text-white flex justify-between items-center">
         <div className="relative group hover:cursor-pointer" onMouseEnter={handleHoverToHome}>
           <h1 className="flex items-center text-2xl font-bold">
@@ -54,13 +54,7 @@ const Header = () => {
     <ul className="text-black space-y-2">
       {categoryLinks.map((item) => (
         <li key={item}>
-          {/* <Link
-            to={`/${item}`}
-            className="block px-4 py-2 border-b border-b-gray-200 hover:bg-gray-100"
-            onClick={() => setMenuOpen(false)}
-          >
-            {item}
-          </Link> */}
+        
           <Link
   to={`/category/${item}`}
   className="block px-4 py-2 border-b border-b-gray-200 hover:bg-gray-100"
