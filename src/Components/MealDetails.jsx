@@ -54,12 +54,12 @@ const MealDetailsPage = () => {
   }
 
   return (
-    <div className="flex flex-col p-5 mt-15  bg-gray-100 md:mt-15 ">
+    <div className="flex flex-col p-5 mt-15  bg-gray-100 md:px-10 md ">
       <h1 className="text-2xl font-bold md:m-10 m-7 md:mb-2 text-black">
         <span className="border-b-4 md:text-3xl border-orange-500 pb-1">MEAL DETAILS</span>
       </h1>
-      <div className="flex flex-col md:m-5 md:flex-row bg-white gap-6 p-6 rounded shadow">
-        <div className="w-full md:w-1/2 md:p-1">
+      <div className="flex flex-col md:m-5 md:flex-row bg-white md:gap-1 gap-6 p-6 rounded shadow">
+        <div className="w-full md:w-1/2 md:p-1  flex justify-center items-center">
            <img src={meal.strMealThumb} alt={meal.strMeal} className="rounded-lg w-full h-auto object-cover" />
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-center md:px-8 py-6">
