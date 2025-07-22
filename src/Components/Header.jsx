@@ -29,10 +29,10 @@ const Header = () => {
       fixed top-0 left-0 right-0 z-50 bg-orange-500  text-white  shadow-md 
       position-fixed fixed bg-orange-500 p-5 text-white flex justify-between items-center">
         <div className="relative group hover:cursor-pointer" onMouseEnter={handleHoverToHome}>
-          <h1 className="flex items-center text-2xl font-bold">
-            <FaUtensils className="mr-2" /> MEAL FINDER
+          <h1 className="flex items-center text-2xl font-bold ml-2 ">
+            <FaUtensils className=" md:ml-5 mr-1" /> MEAL FINDER
           </h1>        </div>
-        <button onClick={toggleMenu}><Menu className='cursor-pointer' size={28} /></button>
+        <button onClick={toggleMenu}><Menu className='cursor-pointer md:mr-5' size={28} /></button>
       </header>
 
       <div

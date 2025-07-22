@@ -21,7 +21,7 @@ const Search = () => {
 
   return (
     <>
-      {/* 🔍 Banner */}
+      {/*  search */}
       <div className="w-full mt-18 min-h-[700px] bg-cover bg-center relative"
         style={{
           backgroundImage:
@@ -52,26 +52,28 @@ const Search = () => {
         </div>
       </div>
 
-      {/* ✅ Search Results Section */}
+      {/* Search Results Section */}
       <div className=" bg-white">
         {searchResults.length > 0 ? (
           <>
-            <h2 className="text-3xl font-bold mb-5">Search Results</h2>
+          <div className='px-5 md:px-20 pt-10 bg-gray-100'>
+            <h2 className="text-3xl font-bold md:mb-10 mb-5 ">Search Results :</h2>
             <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
               {searchResults.map((meal) => (
                 <div
                   key={meal.idMeal}
-                  className="bg-white rounded shadow hover:shadow-lg transition cursor-pointer"
+                  className="bg-white rounded shadow  hover:shadow-lg transition cursor-pointer p-5 "
                   onMouseEnter={() => handleHover(meal.idMeal)}
                 >
                   <img
                     src={meal.strMealThumb}
                     alt={meal.strMeal}
-                    className="w-full h-48 object-cover rounded-t"
+                    className="w-full h-48 object-cover rounded-t rounded"
                   />
-                  <div className="p-4 font-semibold text-center">{meal.strMeal}</div>
+                  <div className="p-4 pb-0 font-semibold text-center">{meal.strMeal}</div>
                 </div>
               ))}
+            </div>
             </div>
           </>
         ) : (

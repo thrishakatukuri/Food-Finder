@@ -37,13 +37,13 @@ const MealDetailsPage = () => {
     ?.split(/(?<=\.)\s+|\n+/)
     .map((step) =>
       step
-        .replace(/^Step\s*\d+:\s*/i, '') // Remove "Step 1:", "Step 2:", etc.
+        .replace(/^Step\s*\d+:\s*/i, '')
         .trim()
     )
     .filter((step) => step.length > 0);
 
 
-  // ✅ Extract ingredients and measures after meal is available
+  // Extract ingredients and measures after meal is available
   const ingredients = [];
   for (let i = 1; i <= 20; i++) {
     const ingredient = meal[`strIngredient${i}`];
@@ -53,6 +53,7 @@ const MealDetailsPage = () => {
     }
   }
 
+
   return (
     <div className="flex flex-col p-5 mt-15  bg-gray-100 md:px-10 md ">
       <h1 className="text-2xl font-bold md:m-10 m-7 md:mb-2 text-black">
@@ -60,10 +61,10 @@ const MealDetailsPage = () => {
       </h1>
       <div className="flex flex-col md:m-5 md:flex-row bg-white md:gap-1 gap-6 p-6 rounded shadow">
         <div className="w-full md:w-1/2 md:p-1  flex justify-center items-center">
-           <img src={meal.strMealThumb} alt={meal.strMeal} className="rounded-lg w-full h-auto object-cover" />
+          <img src={meal.strMealThumb} alt={meal.strMeal} className="rounded-lg w-full h-auto object-cover" />
         </div>
         <div className="w-full md:w-1/2 flex flex-col justify-center md:px-8 py-6">
-           <h1 className="md:text-4xl  text-3xl font-bold mb-4 text-orange-500 border-b-2  border-orange-500 pb-2">
+          <h1 className="md:text-4xl  text-3xl font-bold mb-4 text-orange-500 border-b-2  border-orange-500 pb-2">
             {meal.strMeal} </h1>
           <p className="mb-2  md:text-2xl"><span className="font-semibold md:text-3xl">Category:</span> {meal.strCategory}</p>
           <p className="mb-2">
@@ -72,13 +73,28 @@ const MealDetailsPage = () => {
               className="text-blue-500 underline break-all w-full">
               {meal.strSource || 'N/A'}</a>
           </p>
-          <p className="mb-2">
-            <span className="font-semibold md:text-3xl">Tags:</span>{' '}
-            <span className="border border-orange-500 px-2 py-1 rounded">{meal.strTags || 'None'}</span>
+          <p className="mb-2 flex gap-2">
+            <span className="font-semibold md:text-3xl block mb-2">Tags:</span>
+            <span className="flex flex-wrap gap-2">
+              {meal.strTags
+                ?.split(',')
+                .map((tag, index) => (
+                  <span
+                    key={index}
+                    className="border border-orange-500 px-3 py-1 rounded text-sm bg-orange-50 text-orange-700 flex justify-center items-center"
+                  >
+                    {tag.trim()}
+                  </span>
+                ))}
+            </span>
           </p>
+
+
         </div>
       </div>
-      {/* ✅ Ingredients Section */}
+
+
+      {/*  Ingredients Section */}
       <div className="bg-white mt-5  md:m-5 p-5 rounded shadow">
         <h2 className="text-4xl font-semibold m-4 md:mb-15 ">Measures :</h2>
         <ul className="space-y-2 md:m-5 md:p-5  py-5 border border-gray-200  bg-gray-100 grid gap-6 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
@@ -89,7 +105,8 @@ const MealDetailsPage = () => {
           ))}
         </ul>
       </div>
-      {/* ✅ Instructions Section */}
+
+      {/*  Instructions Section */}
       <div className="bg-white mt-5 p-10 rounded shadow bg-white md:m-5 p-5 rounded shadow">
         <h1 className="text-3xl font-semibold mb-6 ">
           <span className="text-4xl pb-1">Instructions :</span>
