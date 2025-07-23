@@ -1,4 +1,4 @@
-// API’s & Website-links
+// API’s and Website-links
 // 1. ALL API LIST:        https://www.themealdb.com/api.php
 // 2. Meal Categories:     https://www.themealdb.com/api/json/v1/1/categories.php
 // 3. Search meal by name: http://www.themealdb.com/api/json/v1/1/search.php?s=${foodName}
