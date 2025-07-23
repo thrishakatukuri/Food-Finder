@@ -20,18 +20,13 @@ const Categories = () => {
 
   return (
     <div className="p-5 md:p-20 bg-gray-100 pt-10">
+
       <h2 className="text-4xl font-bold mb-8">CATEGORIES</h2>
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {categories.map((cat) => (
-          <div
-            key={cat.idCategory}
-            onClick={() => handleCategoryClick(cat.strCategory)}
-            className="cursor-pointer bg-white rounded relative p-2 shadow hover:shadow-lg transition hover:scale-105"
-          >
-            <span className="absolute right-2 bg-orange-500 text-white text-sm px-3 py-1 rounded shadow">
-              {cat.strCategory}
-            </span>
+          <div key={cat.idCategory} onClick={() => handleCategoryClick(cat.strCategory)} className="cursor-pointer bg-white rounded relative p-2 shadow hover:shadow-lg transition hover:scale-105">
+            <span className="absolute right-2 bg-orange-500 text-white text-sm px-3 py-1 rounded shadow"> {cat.strCategory}</span>
             <img className="p-3 w-full h-48 object-cover rounded" src={cat.strCategoryThumb} alt={cat.strCategory} />
           </div>
         ))}

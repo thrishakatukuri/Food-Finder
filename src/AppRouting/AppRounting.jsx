@@ -1,4 +1,3 @@
-// AppRouting.jsx
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -15,7 +14,6 @@ const AppRouting = () => {
         <Route path="/meal/:mealId" element={<MealDetails />} />
         <Route path="/category/:categoryName" element={<CategoryPage />} />
         <Route path='/' element={<Home />} />
-
       </Routes>
     </Router>
   );
